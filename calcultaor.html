@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Calcuator</title>
+</head>
+<body style="background-color: darkgray;">
+    <h1 style=" background-color: grey; padding: 20px; margin-top: auto; margin-left: auto; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">IOS Calculator</h1>
+    <div class="icon"><i class='bx bxs-calculator'></i></div>
+    <main>
+        <div class="container" style="border-radius: 10px; background-color: black; height: 510px; width: 28%; margin: auto; margin-top: 70px;">
+            <div class="ics"><i class='bx bx-wifi'></i>
+            <i class='bx bxl-whatsapp'></i> 
+            <i class='bx bx-chat'>
+            <i class='bx bxs-battery'></i>
+            </div>
+            <input class="display" type="text" id="results" readonly>
+            <div class="buttons">
+                <button class="function" onclick="clearResults()">AC</button>
+                <button class="function" onclick="Either()">+/-</button>
+                <button class="function" onclick="Percentage()">%</button>
+                <button class="operator" onclick="Divide()">/</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator" onclick="Multiplication()">x</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator" onclick="Subtract()">-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator" onclick="Addition()">+</button>
+                <button class="zero">0</button>
+                <button>.</button>
+                <button class="operator" onclick="calculate()">=</button>  
+            </div>
+        </div>
+        <footer>
+            <div style="background-color:grey; height:60px; width:1050px">one</div>
+        </footer>        
+        <script>
+            const display = document.querySelector('.display');
+            const buttons = document.querySelectorAll('.buttons button');
+            display.style.color = 'white'; 
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const buttonText = button.textContent;
+                            if (buttonText == 'AC'){
+                        display.value = '0';
+
+                    }
+                    else if (buttonText === '=') {
+                        try {
+                            display.value = eval(display.value);
+                        } catch (error) {
+                            display.value = 'Error';
+                        } 
+                    }
+                    else if (buttonText == '+/-') {
+                let number = parseFloat(display.value);
+                number = -number;
+                display.value = number;
+                } 
+                    else {
+                        if (display.value === '0') {
+                            display.value = buttonText;
+                        } else {
+                            display.value += buttonText;
+                    }
+                }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
+
+

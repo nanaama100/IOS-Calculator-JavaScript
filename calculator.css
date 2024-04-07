@@ -1,0 +1,72 @@
+.ics{
+    font-size: 15px;
+    color: white;
+    padding: 9px;
+    margin-left: 200px;
+}
+.icon{
+    position: absolute;
+    font-size: 60px;
+    top: 25px;
+    left: 24%;
+    color: black;
+}
+
+#results{
+    padding-top: 10;
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 80%;
+    height: 70px;
+    border:1px solid transparent ;
+    background-color:black;
+    color: white;
+    text-align: right;
+    font-size: 25px;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 4px;
+    row-gap: 20px;
+    column-gap: 4px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 2px;
+}
+
+button{
+    padding:5px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 48px;
+    background-color: #333;
+    border-color: black;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover{
+    background-color: burlywood;
+}
+
+.zero{
+    grid-column: span 2;
+    width: 90px;
+}
+
+.function{
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.operator{
+    background-color: orange;
+    border-color: black;
+    color: black;
+}
